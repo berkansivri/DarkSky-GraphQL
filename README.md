@@ -6,7 +6,7 @@
   <h3 align="center">DarkSky GraphQL Server</h3>
 
   <p align="center">
-    The project is GraphQL implementation of <a href="https://darksky.net" target="_blank">DarkSky Weather API</a> on <a href="https://www.apollographql.com/" target="_blank"><img width="30" src="https://g00glen00b.be/wp-content/uploads/2018/02/apollo-logo.png" alt="Apollo logo"></a>.
+    The project is GraphQL implementation of <a href="https://darksky.net" target="_blank">DarkSky Weather API</a> on Apollo<a href="https://www.apollographql.com/" target="_blank"><img width="30" src="https://g00glen00b.be/wp-content/uploads/2018/02/apollo-logo.png" alt="Apollo logo"></a>.
     <br />
     <a target="_blank" href="https://darksky-graphql.berkansivri.now.sh">Live Server</a>
   </p>
@@ -18,6 +18,7 @@
 npm install
 ```
 ### Compiles and hot-reloads for development
+* Get an API Key from <a href="darksky.net" target="_blank">DarkSky</a>. Put it in `.env` file.
 ```
 npm start
 ```
