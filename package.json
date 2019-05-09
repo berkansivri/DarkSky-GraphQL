@@ -1,14 +1,18 @@
 {
-  "name": "gserver",
+  "name": "DarkSky-GraphQL",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "apollo.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -r esm src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkansivri/DarkSky-GraphQL.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "berkansivri",
   "license": "ISC",
   "dependencies": {
     "apollo-datasource-rest": "^0.4.0",
@@ -22,5 +26,9 @@
   "devDependencies": {
     "apollo-link": "^1.2.11",
     "apollo-link-http": "^1.5.14"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/berkansivri/DarkSky-GraphQL/issues"
+  },
+  "homepage": "https://github.com/berkansivri/DarkSky-GraphQL#readme"
 }
