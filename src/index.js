@@ -14,7 +14,9 @@ const server = new ApolloServer({
   dataSources, 
   engine: {
     apiKey: process.env.ENGINE_API_KEY
-  }
+  },
+  playground: true,
+  introspection: true
 });
 
 server.listen().then(({ url }) => {
