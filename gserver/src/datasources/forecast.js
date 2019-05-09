@@ -11,33 +11,47 @@ class forecastAPI extends RESTDataSource {
     return response ? this.forecastReducer(response) : {};
   }
 
+  async getForecastByDate({ latitude, longitude, date }) {
+    var unixDate = parseInt((new Date(date).getTime() / 1000).toFixed(0));
+    console.log(unixDate)
+    const response = await this.get(`${latitude},${longitude},${unixDate}`);
+    return response ? this.forecastReducer(response) : {};
+  }
+
   forecastReducer(forecast) {
     return {
       latitude: forecast.latitude,
       longitude: forecast.longitude,
       timezone: forecast.timezone,
-      currently: this.hourlyReducer(forecast.currently),
-      hourly: this.weatherReducer(forecast.hourly),
-      daily: this.weatherReducer(forecast.daily),
+      currently: this.hourlyDataReducer(forecast.currently),
+      hourly: this.hourlyReducer(forecast.hourly),
+      daily: this.dailyReducer(forecast.daily),
       flags: {
         sources: forecast.flags.sources,
         nearestStation: forecast.flags.nearestStation,
-        units: forecast.flags.units,
+        units: forecast.flags.units
       },
       offset: forecast.offset
     };
   }
 
-  weatherReducer(prop) {
-    console.log(Object.getOwnPropertyNames(prop))
+  hourlyReducer(prop) {
     return {
       summary: prop.summary,
       icon: prop.icon,
-      data: prop.data.map(d => this.detailsReducer(d))
+      data: prop.data.map(d => this.hourlyDataReducer(d))
     };
   }
 
-  hourlyReducer(prop) {
+  dailyReducer(prop) {
+    return {
+      summary: prop.summary,
+      icon: prop.icon,
+      data: prop.data.map(d => this.dailyDataReducer(d))
+    };
+  }
+
+  hourlyDataReducer(prop) {
     return {
       time: prop.time,
       summary: prop.summary,
@@ -46,6 +60,7 @@ class forecastAPI extends RESTDataSource {
       nearestStormBearing: prop.nearestStormBearing,
       precipIntensity: prop.precipIntensity,
       precipProbability: prop.precipProbability,
+      precipType: prop.precipType,
       temperature: prop.temperature,
       apparentTemperature: prop.apparentTemperature,
       dewPoint: prop.dewPoint,
@@ -61,7 +76,7 @@ class forecastAPI extends RESTDataSource {
     };
   }
 
-  dailyReducer(prop) {
+  dailyDataReducer(prop) {
     return {
       time: prop.time,
       summary: prop.summary,
