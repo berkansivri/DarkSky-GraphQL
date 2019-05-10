@@ -6,15 +6,15 @@ class forecastAPI extends RESTDataSource {
     this.baseURL = `https://api.darksky.net/forecast/${ process.env.DARKSKY_SECRET_KEY || 'dd066071def900a39ecca2eea88478f1' }/`;
   }
 
-  async getForecast({ latitude, longitude }) {
-    const response = await this.get(`${latitude},${longitude}`);
+  async getForecast({ latitude, longitude, units }) {
+    const response = await this.get(`${latitude},${longitude}`, {units});
     return response ? this.forecastReducer(response) : {};
   }
 
-  async getForecastByDate({ latitude, longitude, date }) {
+  async getForecastByDate({ latitude, longitude, date, units }) {
     var unixDate = parseInt((new Date(date).getTime() / 1000).toFixed(0));
     console.log(unixDate)
-    const response = await this.get(`${latitude},${longitude},${unixDate}`);
+    const response = await this.get(`${latitude},${longitude},${unixDate}`, {units});
     return response ? this.forecastReducer(response) : {};
   }
 
