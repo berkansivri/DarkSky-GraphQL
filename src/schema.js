@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Query {
     forecast(latitude: Float!, longitude: Float!): Forecast!
     forecastByDate( latitude: Float! longitude: Float! date: String!): DateForecast!
+    hello: String
   }
 
   type Forecast {

@@ -1,7 +1,7 @@
 {
-  "name": "DarkSky-GraphQL",
+  "name": "darksky-graphql",
   "version": "1.0.0",
-  "description": "",
+  "description": "Apollo - GraphQL implementation of DarkSky Weather API ",
   "main": "apollo.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/berkansivri/DarkSky-GraphQL.git"
   },
   "keywords": [],
-  "author": "berkansivri",
+  "author": "Berkan Sivri <berkansivri@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "apollo-datasource-rest": "^0.4.0",

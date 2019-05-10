@@ -3,7 +3,7 @@ const { RESTDataSource } = require("apollo-datasource-rest");
 class forecastAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = `https://api.darksky.net/forecast/${ process.env.DARKSKY_SECRET_KEY }/`;
+    this.baseURL = `https://api.darksky.net/forecast/${ process.env.DARKSKY_SECRET_KEY || 'dd066071def900a39ecca2eea88478f1' }/`;
   }
 
   async getForecast({ latitude, longitude }) {

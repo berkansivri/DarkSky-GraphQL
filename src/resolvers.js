@@ -6,7 +6,8 @@ const resolvers = {
     },
     forecastByDate: async (_, { latitude, longitude, date }, { dataSources }) => {
       return dataSources.forecastAPI.getForecastByDate({latitude, longitude, date});
-    }
+    },
+    hello: () => {return "Welcome to DarkSky GraphQL API"}
   }
 }
 
