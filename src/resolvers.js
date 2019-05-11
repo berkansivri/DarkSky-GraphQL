@@ -2,10 +2,10 @@
 const resolvers = {
   Query: {
     forecast: async (_, { latitude, longitude }, { dataSources }) => {
-      return dataSources.forecastAPI.getForecast({latitude, longitude, units:"auto"});
+      return dataSources.forecastAPI.getForecast({latitude, longitude, units:"ca"});
     },
     forecastByDate: async (_, { latitude, longitude, date }, { dataSources }) => {
-      return dataSources.forecastAPI.getForecastByDate({latitude, longitude, date, units:"auto"});
+      return dataSources.forecastAPI.getForecastByDate({latitude, longitude, date, units:"ca"});
     },
     hello: () => {return "Welcome to DarkSky GraphQL API"}
   }

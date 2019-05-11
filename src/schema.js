@@ -2,8 +2,8 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    forecast(latitude: Float!, longitude: Float!, units: String = "auto"): Forecast!
-    forecastByDate( latitude: Float! longitude: Float! date: String!, units: String = "auto"): DateForecast!
+    forecast(latitude: Float!, longitude: Float!, units: String = "ca"): Forecast!
+    forecastByDate( latitude: Float! longitude: Float! date: String!, units: String = "ca"): DateForecast!
     hello: String
   }
 
