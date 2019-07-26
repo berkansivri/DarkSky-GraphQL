@@ -3,12 +3,12 @@
     <img src="https://graphql.org/img/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">DarkSky GraphQL Server</h3>
+  <h2 align="center">DarkSky GraphQL Server</h3>
 
   <p align="center">
     The project is GraphQL implementation of <a href="https://darksky.net" target="_blank">DarkSky Weather API</a> on Apollo<a href="https://www.apollographql.com/" target="_blank"><img width="30" src="https://g00glen00b.be/wp-content/uploads/2018/02/apollo-logo.png" alt="Apollo logo"></a>.
     <br />
-    <a target="_blank" href="https://darksky-graphql.berkansivri.now.sh">Live Server</a>
+    <a target="_blank" href="https://darksky-graphql.berkansivri.now.sh"><h3>Live Server</h4></a>
   </p>
 </p>
 
